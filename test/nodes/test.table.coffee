@@ -22,7 +22,7 @@ test 'Test the Table node', ->
   # Test 4*10: chaining works
   i = 0
   while i < 10
-    child = node.cell Faker.random.number(99), Faker.random.number(99)
+    child = node.cell Math.floor((Math.random() * 100) + 1), Math.floor((Math.random() * 100) + 1)
     childId = child.getId()
     deepEqual child.tagName is "td", true, "Node is a td"
     # Test 5*10: chained node is in the DOM

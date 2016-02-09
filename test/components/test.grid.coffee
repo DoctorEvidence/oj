@@ -1,11 +1,11 @@
 qunit = require 'qunit'
- 
+
 randomXys = []
 xy = 0
 while xy < 10
   randomXys[xy] = 
-    x: Faker.random.number(99)
-    y: Faker.random.number(3)
+    x: Math.floor((Math.random() * 100) + 1)
+    y: Math.floor((Math.random() * 3) + 1)
   xy += 1
 
 qunit.module 'grid', setup: ->
