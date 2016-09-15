@@ -9,6 +9,8 @@ ajaxPromise = (ajax) ->
   promise = Promise.resolve ajax
   promise.abort = ajax.abort
   promise.readyState = ajax.readyState
+  promise.then -> delete promise.abort
+  promise.error -> delete promise.abort
   promise
 
 # ## all
