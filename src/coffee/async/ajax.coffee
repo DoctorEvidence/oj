@@ -132,6 +132,11 @@ ajax.delete = (opts) ->
 # - `opts` can also be a string, representing the URL to hit.
 ajax.put = (opts) ->
   config.execRequest 'PUT', opts
-
+    
+# - `opts` can be an object representing the configuration of the request.
+# - `opts` can also be a string, representing the URL to hit.
+ajax.patch = (opts) ->
+  config.execRequest 'PATCH', opts
+  
 OJ.async.register 'ajax', ajax
 module.exports = ajax
